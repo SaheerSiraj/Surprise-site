@@ -26,7 +26,7 @@
     msg.style.marginBottom = "15px";
 
     const button = document.createElement("button");
-    button.textContent = "Download it";
+    button.textContent = "View it";
     button.style.padding = "10px 20px";
     button.style.backgroundColor = "#007bff";
     button.style.color = "white";
@@ -34,15 +34,9 @@
     button.style.borderRadius = "5px";
     button.style.cursor = "pointer";
 
-    // On click: download + redirect
+    // On click: open PDF in new tab + redirect
     button.onclick = function () {
-      // Trigger PDF download
-      const a = document.createElement("a");
-      a.href = "loveletter.pdf"; // Make sure this file is in your repo
-      a.download = "loveletter.pdf";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+      window.open("loveletter.pdf", "_blank");
 
       // Redirect after short delay
       setTimeout(() => {
@@ -55,6 +49,7 @@
     document.body.appendChild(popup);
   }
 </script>
+
 
   <style>
     body {
