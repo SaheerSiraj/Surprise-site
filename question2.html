@@ -5,7 +5,57 @@
   <title>Question 1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script>
+  function rightAnswer(nextPage) {
+    // Create the pop-up
+    const popup = document.createElement("div");
+    popup.style.position = "fixed";
+    popup.style.top = "50%";
+    popup.style.left = "50%";
+    popup.style.transform = "translate(-50%, -50%)";
+    popup.style.backgroundColor = "white";
+    popup.style.padding = "20px";
+    popup.style.borderRadius = "10px";
+    popup.style.boxShadow = "0 0 15px rgba(0,0,0,0.3)";
+    popup.style.zIndex = "9999";
+    popup.style.textAlign = "center";
+    popup.style.color = "#333";
+
+    const msg = document.createElement("p");
+    msg.textContent = "Hey, here is your new love letter from me";
+    msg.style.marginBottom = "15px";
+
+    const button = document.createElement("button");
+    button.textContent = "Download it";
+    button.style.padding = "10px 20px";
+    button.style.backgroundColor = "#007bff";
+    button.style.color = "white";
+    button.style.border = "none";
+    button.style.borderRadius = "5px";
+    button.style.cursor = "pointer";
+
+    // On click: download + redirect
+    button.onclick = function () {
+      // Trigger PDF download
+      const a = document.createElement("a");
+      a.href = "loveletter.pdf"; // Make sure this file is in your repo
+      a.download = "loveletter.pdf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      // Redirect after short delay
+      setTimeout(() => {
+        window.location.href = nextPage;
+      }, 1000);
+    };
+
+    popup.appendChild(msg);
+    popup.appendChild(button);
+    document.body.appendChild(popup);
+  }
+</script>
+
   <style>
     body {
       background: url('background2.jpg') no-repeat center center/cover;
