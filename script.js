@@ -2,7 +2,7 @@ function validateLogin() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
 
-  if (user === "yourUsername" && pass === "yourPassword") {
+  if (user === "090842" && pass === "iloveyousaheer") {
     window.location.href = "main.html";
   } else {
     document.getElementById("error-msg").textContent = "Oops, this surprise is not for you";
