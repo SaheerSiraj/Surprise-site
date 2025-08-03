@@ -4,16 +4,20 @@
   <title>Watch Video</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body style="text-align: center; margin-top: 100px;">
-  <a href="YOUR_VIDEO_LINK_HERE" target="_blank">▶️ Click here to watch the video</a>
+<body style="text-align: center; margin-top: 50px; background-color: #000;">
+  <h2 style="color: white;">🎬 Surprise Video</h2>
+  <iframe 
+    src="https://drive.google.com/uc?export=preview&id=YOUR_FILE_ID"
+    width="640" height="480"
+    allow="autoplay"
+    style="border: none;">
+  </iframe>
 
   <script>
     setTimeout(() => {
-      setTimeout(() => {
-        alert("Congrats!!! You are getting another love letter from me 😊😊😊");
-        window.location.href = "love_letter.pdf";
-      }, 1000);
-    }, 5000); // After 5 seconds
+      alert("Congrats!!! You are getting another love letter from me 😊😊😊");
+      window.location.href = "love_letter.pdf";
+    }, 10000); // show after 10 seconds
   </script>
 </body>
 </html>
